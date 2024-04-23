@@ -19,74 +19,235 @@
             <section id="text" class="main-section">
                 <h2><span class="hash">#</span>Text</h2>
                 <p>A view that displays one or more lines of read-only text.</p>
+                <code>Text("Hello World")</code>
             </section>
             <section id="label" class="main-section">
                 <h2><span class="hash">#</span>Label</h2>
                 <p>Label is a convenient view that presents an image and text alongside each other. This is suitable for
                     a menu item or your settings.</p>
+                <code>
+          <p>Label("Swift", image: "swift")</p>
+          <p>Label("Website", systemImage: "globe")</p>
+        </code>
             </section>
             <section id="textfield" class="main-section">
                 <h2><span class="hash">#</span>TextField</h2>
                 <p>A control that displays an editable text interface.</p>
+                <code>
+          <pre>
+@State var name: String = "John"
+
+var body: some View {
+    TextField("Name's placeholder", text: $name)
+        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .padding()
+}
+          </pre>
+        </code>
             </section>
             <section id="texteditor" class="main-section">
                 <h2><span class="hash">#</span>TextEditor</h2>
                 <p>A view that can display and edit long-form text.</p>
+                <code>
+          <pre>
+@State private var fullText: String = "This is some editable text..."
+
+var body: some View {
+    TextEditor(text: $fullText)
+}
+          </pre>
+        </code>
             </section>
             <section id="securefield" class="main-section">
                 <h2><span class="hash">#</span>SecureField</h2>
                 A control into which the user securely enters private text.
+                <code>
+          <pre>
+@State var password: String = "1234"
+
+var body: some View {
+    SecureField($password)
+        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .padding()
+}
+          </pre>
+        </code>
             </section>
             <section id="image" class="main-section">
                 <h2><span class="hash">#</span>Image</h2>
                 <p>A view that displays an environment-dependent image.</p>
+                <code>
+          Image("foo") //image name is foo
+        </code>
             </section>
             <section id="button" class="main-section">
                 <h2><span class="hash">#</span>Button</h2>
                 <p>A control that performs an action when triggered.</p>
+                <code>
+          <pre>
+Button(
+    action: {
+        <span class="comment">// did tap</span>
+    },
+    label: { Text("Click Me") }
+}
+          </pre>
+        </code>
             </section>
             <section id="link" class="main-section">
                 <h2><span class="hash">#</span>Link</h2>
                 <p>Create a link-style Button that will open in the associated app, if possible, but otherwise in the
                     user’s default web browser.</p>
+                <code>Link("View Our Terms of Service", destination: URL(string: "https://www.example.com/TOS.html")!)</code>
             </section>
             <section id="navigationlink" class="main-section">
                 <h2><span class="hash">#</span>NavigationLink</h2>
                 <p>A button that triggers a navigation presentation when pressed. This is a replacement for
                     pushViewController</p>
+                <code>
+          <pre>
+NavigationView {
+    NavigationLink(destination:
+        Text("Detail")
+        .navigationBarTitle(Text("Detail"))
+    ) {
+        Text("Push")
+    }.navigationBarTitle(Text("Master"))
+}
+          </pre
+        </code>
             </section>
             <section id="toolbaritem" class="main-section">
                 <h2><span class="hash">#</span>ToolbarItem</h2>
                 <p>A model that represents an item which can be placed in the toolbar or navigation bar. This represents
                     most properties in UINavigationItem</p>
+                <code>
+          <pre>
+NavigationView {
+    Text("SwiftUI").padding()
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text("Title")
+                   Button("Clickable Subtitle") { print("principle") }
+               }
+            }
+        }
+}
+          </pre>
+        </code>
             </section>
             <section id="toggle" class="main-section">
                 <h2><span class="hash">#</span>Toggle</h2>
                 <p>A control that toggles between on and off states.</p>
+                <code>
+          <pre>
+@State var isShowing = true // toggle state
+
+Toggle(isOn: $isShowing) {
+    Text("Hello World")
+}
+          </pre>
+        </code>
             </section>
             <section id="map" class="main-section">
                 <h2><span class="hash">#</span>Map</h2>
                 <p>A view that displays an embedded map interface.</p>
+                <code>
+          <pre>
+import MapKit
+
+@State var region = MKCoordinateRegion(center: .init(latitude: 37.334722, longitude: -122.008889), latitudinalMeters: 300, longitudinalMeters: 300)
+
+Map(coordinateRegion: $region)
+          </pre>
+        </code>
             </section>
             <section id="picker" class="main-section">
                 <h2><span class="hash">#</span>Picker</h2>
                 <p>A control for selecting from a set of mutually exclusive values.</p>
+                <code>
+          <pre>
+NavigationView {
+    Form {
+        Section {
+            Picker(selection: $selection, label:
+                Text("Picker Name")
+                , content: {
+                    Text("Value 1").tag(0)
+                    Text("Value 2").tag(1)
+                    Text("Value 3").tag(2)
+                    Text("Value 4").tag(3)
+            })
+        }
+    }
+}
+          </pre>
+        </code>
             </section>
             <section id="datepicker" class="main-section">
                 <h2><span class="hash">#</span>DatePicker</h2>
                 <p>A control for selecting an absolute date.</p>
+                <code>
+          <pre>
+@State var selectedDate = Date()
+
+var dateClosedRange: ClosedRange<Date> {
+    let min = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
+    let max = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
+    return min...max
+}
+
+NavigationView {
+    Form {
+        Section {
+            DatePicker(
+                selection: $selectedDate,
+                in: dateClosedRange,
+                displayedComponents: .date,
+                label: { Text("Due Date") }
+            )
+        }
+    }
+}
+          </pre>
+        </code>
             </section>
             <section id="progressview" class="main-section">
                 <h2><span class="hash">#</span>ProgressView</h2>
                 <p>A view that shows the progress towards completion of a task.</p>
+                <code>
+          <pre>
+@State private var progress = 0.5
+
+VStack {
+    ProgressView(value: progress)
+    Button("More", action: { progress += 0.05 })
+}
+          </pre>
+        </code>
             </section>
             <section id="slider" class="main-section">
                 <h2><span class="hash">#</span>Slider</h2>
                 <p>A control for selecting a value from a bounded linear range of values.</p>
+                <code>
+          <pre>
+@State var progress: Float = 0
+
+Slider(value: $progress, from: 0.0, through: 100.0, by: 5.0)   
+          </pre>
+        </code>
             </section>
             <section id="stepper" class="main-section">
                 <h2><span class="hash">#</span>Stepepr</h2>
                 <p>A control used to perform semantic increment and decrement actions.</p>
+                <code>
+          <pre>
+@State var quantity: Int = 0
+
+Stepper(value: $quantity, in: 0...10, label: { Text("Quantity \(quantity)")})
+          </pre>
+        </code>
             </section>
         </section>
 
@@ -94,75 +255,290 @@
             <section id="hstack" class="main-section">
                 <h2><span class="hash">#</span>HStack</h2>
                 <p>A view that arranges its children in a horizontal line.</p>
+                <code>
+          <pre>
+HStack(alignment: .center, spacing: 20){
+    Text("Hello")
+    Divider()
+    Text("World")
+}
+          </pre>
+        </code>
             </section>
             <section id="lazyhstack" class="main-section">
                 <h2><span class="hash">#</span>LazyHStack</h2>
                 <p>A view that arranges its children in a line that grows horizontally, creating items only as needed.
                 </p>
+                <code>
+          <pre>
+ScrollView(.horizontal) {
+    LazyHStack(alignment: .center, spacing: 20) {
+        ForEach(1...100, id: \.self) {
+            Text("Column \($0)")
+        }
+    }
+}
+          </pre>
+        </code>
             </section>
             <section id="vstack" class="main-section">
                 <h2><span class="hash">#</span>VStack</h2>
                 <p>A view that arranges its children in a vertical line.</p>
+                <code>
+          <pre>
+VStack(alignment: .center, spacing: 20){
+    Text("Hello")
+    Divider()
+    Text("World")
+}
+          </pre>
+        </code>
             </section>
             <section id="lazyvstack" class="main-section">
                 <h2><span class="hash">#</span>LayVStack</h2>
                 <p>A view that arranges its children in a line that grows vertically, creating items only as needed.</p>
+                <code>
+          <pre>
+ScrollView {
+    LazyVStack(alignment: .leading) {
+        ForEach(1...100, id: \.self) {
+            Text("Row \($0)")
+        }
+    }
+}
+          </pre>
+        </code>
             </section>
             <section id="zstack" class="main-section">
                 <h2><span class="hash">#</span>ZStack</h2>
                 <p>A view that overlays its children, aligning them in both axes.</p>
+                <code>
+          <pre>
+ZStack {
+    Text("Hello")
+        .padding(10)
+        .background(Color.red)
+        .opacity(0.8)
+    Text("World")
+        .padding(20)
+        .background(Color.red)
+        .offset(x: 0, y: 40)
+}
+          </pre>
+        </code>
             </section>
             <section id="list" class="main-section">
                 <h2><span class="hash">#</span>List</h2>
                 <p>A container that presents rows of data arranged in a single column.</p>
+                <code>
+          <pre>
+List {
+    Text("Hello world")
+    Text("Hello world")
+    Text("Hello world")
+}
+          </pre>
+        </code>
             </section>
             <section id="scrollview" class="main-section">
                 <h2><span class="hash">#</span>ScrollView</h2>
                 <p>A view that allows the scrolling of its contained views.</p>
+                <code>
+          <pre>
+ScrollView {
+    Image("foo")
+    Text("Hello World")
+}
+          </pre>
+        </code>
             </section>
             <section id="lazyhgrid" class="main-section">
                 <h2><span class="hash">#</span>LazyHGrid</h2>
                 <p>A container view that arranges its child views in a grid that grows horizontally, creating items only
                     as needed.</p>
+                <code>
+          <pre>
+var rows: [GridItem] =
+        Array(repeating: .init(.fixed(20)), count: 2)
+
+ScrollView(.horizontal) {
+    LazyHGrid(rows: rows, alignment: .top) {
+        ForEach((0...100), id: \.self) {
+            Text("\($0)").background(Color.pink)
+        }
+    }
+}
+          </pre>
+        </code>
             </section>
             <section id="lazyvgrid" class="main-section">
                 <h2><span class="hash">#</span>LazyVGrid</h2>
                 <p>A container view that arranges its child views in a grid that grows vertically, creating items only
                     as needed.</p>
+                <code>
+          <pre>
+var columns: [GridItem] =
+        Array(repeating: .init(.fixed(20)), count: 5)
+
+ScrollView {
+    LazyVGrid(columns: columns) {
+        ForEach((0...100), id: \.self) {
+            Text("\($0)").background(Color.pink)
+        }
+    }
+}
+          </pre>
+        </code>
             </section>
             <section id="form" class="main-section">
                 <h2><span class="hash">#</span>Form</h2>
                 <p>A container for grouping controls used for data entry, such as in settings or inspectors.</p>
+                <code>
+          <pre>
+NavigationView {
+    Form {
+        Section {
+            Text("Plain Text")
+            Stepper(value: $quantity, in: 0...10, label: { Text("Quantity") })
+        }
+        Section {
+            DatePicker($date, label: { Text("Due Date") })
+            Picker(selection: $selection, label:
+                Text("Picker Name")
+                , content: {
+                    Text("Value 1").tag(0)
+                    Text("Value 2").tag(1)
+                    Text("Value 3").tag(2)
+                    Text("Value 4").tag(3)
+            })
+        }
+    }
+}
+          </pre>
+        </code>
             </section>
             <section id="spacer" class="main-section">
                 <h2><span class="hash">#</span>Spacer</h2>
                 <p>A flexible space that expands along the major axis of its containing stack layout, or on both axes if
                     not contained in a stack.</p>
+                <code>
+          <pre>
+HStack {
+    Image(systemName: "clock")
+    Spacer()
+    Text("Time")
+}
+          </pre>
+        </code>
             </section>
             <section id="divider" class="main-section">
                 <h2><span class="hash">#</span>Divider</h2>
                 <p>A visual element that can be used to separate other content.</p>
+                <code>
+          <pre>
+HStack {
+    Image(systemName: "clock")
+    Divider()
+    Text("Time")
+}.fixedSize()
+          </pre>
+        </code>
             </section>
             <section id="navigationview" class="main-section">
                 <h2><span class="hash">#</span>NavigationView</h2>
                 <p>A view for presenting a stack of views representing a visible path in a navigation hierarchy.</p>
+                <code>
+          <pre>
+NavigationView {            
+    List {
+        Text("Hello World")
+    }
+    .navigationBarTitle(Text("Navigation Title")) // Default to large title style
+}
+          </pre>
+        </code>
             </section>
             <section id="tabview" class="main-section">
                 <h2><span class="hash">#</span>TabView</h2>
                 <p>A view that allows for switching between multiple child views using interactable user interface
                     elements.</p>
+                <code>
+          <pre>
+TabView {
+    Text("First View")
+        .font(.title)
+        .tabItem({ Text("First") })
+        .tag(0)
+    Text("Second View")
+        .font(.title)
+        .tabItem({ Text("Second") })
+        .tag(1)
+}
+          </pre>
+        </code>
             </section>
             <section id="alert" class="main-section">
                 <h2><span class="hash">#</span>Alert</h2>
                 <p>A container for an alert presentation.</p>
+                <code>
+          <pre>
+@State var isError: Bool = false
+
+Button("Alert") {
+    self.isError = true
+}.alert(isPresented: $isError, content: {
+    Alert(title: Text("Error"), message: Text("Error Reason"), dismissButton: .default(Text("OK")))
+})
+          </pre>
+        </code>
             </section>
             <section id="modal" class="main-section">
                 <h2><span class="hash">#</span>Modal</h2>
                 <p>A modal transition.</p>
+                <code>
+          <pre>
+@State var isModal: Bool = false
+
+var modal: some View {
+    Text("Modal")
+}
+
+Button("Modal") {
+    self.isModal = true
+}.sheet(isPresented: $isModal, content: {
+    self.modal
+})
+          </pre>
+        </code>
             </section>
             <section id="actionsheet" class="main-section">
                 <h2><span class="hash">#</span>ActionSheet</h2>
                 <p>A storage type for an action sheet presentation.</p>
+                <code>
+          <pre>
+@State var isSheet: Bool = false
+
+var actionSheet: ActionSheet {
+    ActionSheet(title: Text("Action"),
+                message: Text("Description"),
+                buttons: [
+                    .default(Text("OK"), action: {
+                        
+                    }),
+                    .destructive(Text("Delete"), action: {
+                        
+                    })
+                ]
+    )
+}
+
+Button("Action Sheet") {
+    self.isSheet = true
+}.actionSheet(isPresented: $isSheet, content: {
+    self.actionSheet
+})
+          </pre>
+        </code>
             </section>
         </section>
     </main>
