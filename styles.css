@@ -23,3 +23,20 @@
 h1 {
     margin: 0;
 }
+
+@media (max-width: 650px) {
+    #main {
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 550px) {
+    #navbar {
+        padding-left: 20px;
+    }
+
+    #main {
+        padding-left: 20px;
+        margin-left: 200px;
+    }
+}
