@@ -1,4 +1,4 @@
-#nav-bar {
+#navbar {
     height: 100%; /* 100% Full-height */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
@@ -11,6 +11,13 @@
     padding: 30px;
     margin-left: 250px;
     overflow-x: hidden;
+}
+
+.nav-link {
+    color: unset;
+    text-decoration: none;
+    display: block;
+    padding-top: 10px;
 }
 
 h1 {
