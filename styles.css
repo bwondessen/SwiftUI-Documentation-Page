@@ -9,6 +9,7 @@
     left: 0;
     overflow-x: hidden; /* Disable horizontal scroll */
     padding: 30px;
+    color: #9A9A9E;
 }
 
 #main {
@@ -25,13 +26,51 @@
 }
 
 h1 {
-    margin: 0;
+    color: black;
 }
 
-code {
-    /* background-color: #e5e5e5; */
-    /* color: white; */
-    /* background-color: black; */
+h2 {
+    margin: 0;
+    color: black;
+}
+
+p {
+    color: black;
+}
+
+pre {
+    color: #CCCCCC;
+    background-color: black;
+    padding: 15px 10px;
+    margin: 15px 0 85px 0;
+}
+
+ul {
+    padding-bottom: 35px;
+}
+
+.hash {
+    color: #EC633E;
+}
+
+.swift-keyword {
+    color: #6D6D84;
+}
+
+.swiftUI-keyword {
+    color: #E58D5C;
+}
+
+.string {
+    color: #8DC39B;
+}
+
+.other {
+    color: #81CBCB;
+}
+
+.comment {
+    color: #999999
 }
 
 @media (max-width: 650px) {
