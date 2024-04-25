@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 #navbar {
     height: 100%; /* 100% Full-height */
     position: fixed; /* Stay in place */
@@ -22,6 +26,12 @@
 
 h1 {
     margin: 0;
+}
+
+code {
+    /* background-color: #e5e5e5; */
+    /* color: white; */
+    /* background-color: black; */
 }
 
 @media (max-width: 650px) {

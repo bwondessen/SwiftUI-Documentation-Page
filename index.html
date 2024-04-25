@@ -76,15 +76,15 @@
                 <section id="text" class="main-section">
                     <h2><span class="hash">#</span>Text</h2>
                     <p>A view that displays one or more lines of read-only text.</p>
-                    <code>Text("Hello World")</code>
+                    <code><span class="swiftUI-keyword">Text</span>(<span class="string">Hello World"</span>)</code>
                 </section>
                 <section id="label" class="main-section">
                     <h2><span class="hash">#</span>Label</h2>
                     <p>Label is a convenient view that presents an image and text alongside each other. This is suitable
                         for a menu item or your settings.</p>
                     <code>
-            <p>Label("Swift", image: "swift")</p>
-            <p>Label("Website", systemImage: "globe")</p>
+            <p><span class="swiftUI-keyword">Label</span>(<span class="string">"Swift"</span>, image: <span class="string">"swift"</span>)</p>
+            <p><span class="swiftUI-keyword">Label</span>(<span class="string">"Website"</span>, systemImage: <span="string">"globe")</span></p>
           </code>
                 </section>
                 <section id="textfield" class="main-section">
@@ -92,12 +92,12 @@
                     <p>A control that displays an editable text interface.</p>
                     <code>
             <pre>
-  @State var name: String = "John"
+  @<span class="swift-keyword">State var</span> name: <span class="swift-keyword">String</span> = <span class="string">"John"</span>
 
-  var body: some View {
-      TextField("Name's placeholder", text: $name)
-          .textFieldStyle(RoundedBorderTextFieldStyle())
-          .padding()
+  <span class="swift-keyword">var</span> body: some <span class="swift-keyword">View</span> {
+      <span class="swiftUI-keyword">TextField</span>(<span class="string">"Name's placeholder"</span>, text: $name)
+          .<span class="swiftUI-keyword">textFieldStyle</span>(<span class="swiftUI-keyword">RoundedBorderTextFieldStyle</span>())
+          .<span class="swiftUI-keyword">padding</span>()
   }
             </pre>
           </code>
@@ -107,10 +107,10 @@
                     <p>A view that can display and edit long-form text.</p>
                     <code>
             <pre>
-  @State private var fullText: String = "This is some editable text..."
+  @<span class="swift-keyword">State private var</span> fullText: <span class="swift-keyword">String</span> <span class="other">=</span> <span class="string">"This is some editable text..."</span>
 
-  var body: some View {
-      TextEditor(text: $fullText)
+  <span class="swift-keyword">var</span> body: some <span class="swift-keyword">View</span> {
+      <span class="swiftUI-keyword">TextEditor</span>(text: $fullText)
   }
             </pre>
           </code>
@@ -120,12 +120,12 @@
                     A control into which the user securely enters private text.
                     <code>
             <pre>
-  @State var password: String = "1234"
+  @<span class="swift-keyword">State var</span> password: <span class="swift-keyword">String</span> = <span class="string">"1234"</span>
 
-  var body: some View {
-      SecureField($password)
-          .textFieldStyle(RoundedBorderTextFieldStyle())
-          .padding()
+  <span class="swift-keyword">var</span> body: some <span class="swift-keyword">View</span> {
+      <span class="swiftUI-keyword">SecureField</span>($password)
+          .<span class="swiftUI-keyword">textFieldStyle</span>(<span class="swiftUI-keyword">RoundedBorderTextFieldStyle</span>())
+          .<span class="swiftUI-keyword">padding</span>()
   }
             </pre>
           </code>
@@ -134,7 +134,7 @@
                     <h2><span class="hash">#</span>Image</h2>
                     <p>A view that displays an environment-dependent image.</p>
                     <code>
-            Image("foo") //image name is foo
+            <span class="swiftUI-keyword">Image</span>(<span class="string">"foo"</span>) <span class="comment">//image name is foo</span>
           </code>
                 </section>
                 <section id="button" class="main-section">
@@ -142,11 +142,11 @@
                     <p>A control that performs an action when triggered.</p>
                     <code>
             <pre>
-  Button(
+  <span class="swiftUI-keyword">Button</span>(
       action: {
           <span class="comment">// did tap</span>
       },
-      label: { Text("Click Me") }
+      label: { <span class="swiftUI-keyword">Text</span>(<span class="string">"Click Me"</span>) }
   }
             </pre>
           </code>
@@ -155,7 +155,7 @@
                     <h2><span class="hash">#</span>Link</h2>
                     <p>Create a link-style Button that will open in the associated app, if possible, but otherwise in
                         the user’s default web browser.</p>
-                    <code>Link("View Our Terms of Service", destination: URL(string: "https://www.example.com/TOS.html")!)</code>
+                    <code><span class="swiftUI-keyword">Link</span>(<span class="string">"View Our Terms of Service"</span>, destination: <span class="swiftUI-keyword">URL</span>(string: <span class="string">"https://www.example.com/TOS.html"</span>)<span class="other">!</span>)</code>
                 </section>
                 <section id="navigationlink" class="main-section">
                     <h2><span class="hash">#</span>NavigationLink</h2>
@@ -163,13 +163,13 @@
                         pushViewController</p>
                     <code>
             <pre>
-  NavigationView {
-      NavigationLink(destination:
-          Text("Detail")
-          .navigationBarTitle(Text("Detail"))
+  <span class="swift-keyword">NavigationView</span> {
+      <span class="swiftUI-keyword">NavigationLink</span>(destination:
+          <span class="swiftUI-keyword">Text</span>(<span class="string">"Detail"</span>)
+          .<span class="swiftUI-keyword">navigationBarTitle</span>(<span class="swiftUI-keyword">Text</span>(<span class="string">"Detail"</span>))
       ) {
-          Text("Push")
-      }.navigationBarTitle(Text("Master"))
+          <span class="swiftUI-keyword">Text</span>(<span class="string">"Push"</span>)
+      }.<span class="swiftUI-keyword">navigationBarTitle</span>(<span class="swiftUI-keyword">Text</span>(<span class="string">"Master"</span>))
   }
             </pre
           </code>
@@ -180,13 +180,13 @@
                         represents most properties in UINavigationItem</p>
                     <code>
             <pre>
-  NavigationView {
-      Text("SwiftUI").padding()
-          .toolbar {
-              ToolbarItem(placement: .principal) {
-                  VStack {
-                      Text("Title")
-                    Button("Clickable Subtitle") { print("principle") }
+  <span class="swift-keyword">NavigationView</span> {
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"SwiftUI"</span>).<span class="swiftUI-keyword">padding</span>()
+          .<span class="swiftUI-keyword">toolbar</span> {
+              <span class="swiftUI-keyword">ToolbarItem</span>(placement: .principal) {
+                  <span class="swift-keyword">VStack</span> {
+                      <span class="swiftUI-keyword">Text</span>(<span class="string">"Title"</span>)
+                    <span class="swiftUI-keyword">Button</span>(<span class="string">"Clickable Subtitle"</span>) { <span class="swiftUI-keyword">print</span>(<span class="string">"principle"</span>) }
                 }
               }
           }
@@ -199,10 +199,10 @@
                     <p>A control that toggles between on and off states.</p>
                     <code>
             <pre>
-  @State var isShowing = true // toggle state
+  @<span class="swift-keyword">State var</span> isShowing <span class="other">=</span> <span class="swiftUI-keyword">true</span> <span class="comment">// toggle state</span>
 
-  Toggle(isOn: $isShowing) {
-      Text("Hello World")
+  <span class="swiftUI-keyword">Toggle</span>(isOn: $isShowing) {
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Hello World"</span>)
   }
             </pre>
           </code>
@@ -212,11 +212,11 @@
                     <p>A view that displays an embedded map interface.</p>
                     <code>
             <pre>
-  import MapKit
+  <span class="swift-keyword">import MapKit</span>
 
-  @State var region = MKCoordinateRegion(center: .init(latitude: 37.334722, longitude: -122.008889), latitudinalMeters: 300, longitudinalMeters: 300)
+  @<span class="swift-keyword">State var</span> region = <span class="swiftUI-keyword">MKCoordinateRegion</span>(center: .<span class="swift-keyword">init</span>(latitude: <span class="swiftUI-keyword">37.334722</span>, longitude: <span class="other">-</span><span class="swiftUI-keyword">122.008889</span>), latitudinalMeters: <span class="swiftUI-keyword">300</span>, longitudinalMeters: <span class="swiftUI-keyword">300</span>)
 
-  Map(coordinateRegion: $region)
+  <span class="swiftUI-keyword">Map</span>(coordinateRegion: $region)
             </pre>
           </code>
                 </section>
@@ -225,16 +225,16 @@
                     <p>A control for selecting from a set of mutually exclusive values.</p>
                     <code>
             <pre>
-  NavigationView {
-      Form {
-          Section {
-              Picker(selection: $selection, label:
-                  Text("Picker Name")
+  <span class="swift-keyword">NavigationView</span> {
+      <span class="swift-keyword">Form</span> {
+          <span class="swift-keyword">Section</span> {
+              <span class="swiftUI-keyword">Picker</span>(selection: $selection, label:
+                  <span class="swiftUI-keyword">Text</span>(<span class="string">"Picker Name"</span>)
                   , content: {
-                      Text("Value 1").tag(0)
-                      Text("Value 2").tag(1)
-                      Text("Value 3").tag(2)
-                      Text("Value 4").tag(3)
+                      <span class="swiftUI-keyword">Text</span>(<span class="string">"Value 1"</span>).<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">0</span>)
+                      <span class="swiftUI-keyword">Text</span>(<span class="string">"Value 2"</span>).<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">1</span>)
+                      <span class="swiftUI-keyword">Text</span>(<span class="string">"Value 3"</span>).<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">2</span>)
+                      <span class="swiftUI-keyword">Text</span>(<span class="string">"Value 4"</span>).<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">3</span>)
               })
           }
       }
@@ -247,22 +247,22 @@
                     <p>A control for selecting an absolute date.</p>
                     <code>
             <pre>
-  @State var selectedDate = Date()
+  @<span class="swift-keyword">State var</span> selectedDate <span class="other">=</span> <span class="swiftUI-keyword">Date</span>()
 
-  var dateClosedRange: ClosedRange<Date> {
-      let min = Calendar.current.date(byAdding: .day, value: -1, to: Date())!
-      let max = Calendar.current.date(byAdding: .day, value: 1, to: Date())!
-      return min...max
+  <span class="swift-keyword">var</span> dateClosedRange: <span class="swift-keyword">ClosedRange</span><span class="other"><</span><span class="swift-keyword">Date</span><span class="other">></span> {
+      <span class="swift-keyword">let min</span> <span class="other">=</span> <span class="swift-keyword">Calendar</span>.current.<span class="swiftUI-keyword">date</span>(byAdding: .day, value: <span class="other">-</span><span class="swiftUI-keyword">1</span>, to: <span class="swiftUI-keyword">Date</span>())<span class="other">!</span>
+      <span class="swift-keyword">let max</span> <span class="other">=</span> <span class="swift-keyword">Calendar</span>.current.<span class="swiftUI-keyword">date</span>(byAdding: .day, value: <span class="swiftUI-keyword">1</span>, to: <span class="swiftUI-keyword">Date</span>())<span class="other">!</span>
+      <span class="swift-keyword">return min</span>...<span class="swift-keyword">max</span>
   }
 
-  NavigationView {
-      Form {
-          Section {
-              DatePicker(
+  <span class="swift-keyword">NavigationView</span> {
+      <span class="swift-keyword">Form</span> {
+          <span class="swift-keyword">Section</span> {
+              <span class="swiftUI-keyword">DatePicker</span>(
                   selection: $selectedDate,
-                  in: dateClosedRange,
+                  <span class="swift-keyword">in</span>: dateClosedRange,
                   displayedComponents: .date,
-                  label: { Text("Due Date") }
+                  label: { <span class="swiftUI-keyword">Text</span>(<span class="string">"Due Date"</span>) }
               )
           }
       }
@@ -275,11 +275,11 @@
                     <p>A view that shows the progress towards completion of a task.</p>
                     <code>
             <pre>
-  @State private var progress = 0.5
+  @<span class="swift-keyword">State private var</span> progress <span class="other">=</span> <span class="swiftUI-keyword">0.5</span>
 
-  VStack {
-      ProgressView(value: progress)
-      Button("More", action: { progress += 0.05 })
+  <span class="swift-keyword">VStack</span> {
+      <span class="swiftUI-keyword">ProgressView</span>(value: progress)
+      <span class="swiftUI-keyword">Button</span>(<span class="string">"More"</span>, action: { progress <span class="other">+=</span> <span class="swiftUI-keyword">0.05</span> })
   }
             </pre>
           </code>
@@ -289,9 +289,9 @@
                     <p>A control for selecting a value from a bounded linear range of values.</p>
                     <code>
             <pre>
-  @State var progress: Float = 0
+  @<span class="swift-keyword">State var</span> progress: <span class="swift-keyword">Float</span> <span class="other">=</span> <span class="swiftUI-keyword">0</span>
 
-  Slider(value: $progress, from: 0.0, through: 100.0, by: 5.0)   
+  <span class="swiftUI-keyword">Slider</span>(value: $progress, from: <span class="swiftUI-keyword">0.0</span>, through: <span class="swiftUI-keyword">100.0</span>, by: <span class="swiftUI-keyword">5.0</span>)   
             </pre>
           </code>
                 </section>
@@ -300,9 +300,9 @@
                     <p>A control used to perform semantic increment and decrement actions.</p>
                     <code>
             <pre>
-  @State var quantity: Int = 0
+  @<span class="swift-keyword">State var</span> quantity: <span class="swift-keyword">Int</span> <span class="other">=</span> <span class="swiftUI-keyword">0</span>
 
-  Stepper(value: $quantity, in: 0...10, label: { Text("Quantity \(quantity)")})
+  <span class="swiftUI-keyword">Stepper</span>(value: $quantity, <span class="swift-keyword">in</span>: <span class="swiftUI-keyword">0</span>...<span class="swiftUI-keyword">10</span>, label: { <span class="swiftUI-keyword">Text</span>(<span class="string">"Quantity \(quantity)"</span>)})
             </pre>
           </code>
                 </section>
@@ -314,10 +314,10 @@
                     <p>A view that arranges its children in a horizontal line.</p>
                     <code>
             <pre>
-  HStack(alignment: .center, spacing: 20){
-      Text("Hello")
-      Divider()
-      Text("World")
+  <span class="swift-keyword">HStack</span>(alignment: .center, spacing: <span class="swiftUI-keyword">20</span>){
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Hello"</span>)
+      <span class="swiftUI-keyword">Divider</span>()
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"World"</span>)
   }
             </pre>
           </code>
@@ -328,10 +328,10 @@
                         needed.</p>
                     <code>
             <pre>
-  ScrollView(.horizontal) {
-      LazyHStack(alignment: .center, spacing: 20) {
-          ForEach(1...100, id: \.self) {
-              Text("Column \($0)")
+  <span class="swiftUI-keyword">ScrollView</span>(.horizontal) {
+      <span class="swiftUI-keyword">LazyHStack</span>(alignment: .center, spacing: <span class="swiftUI-keyword">20</span>) {
+          <span class="swiftUI-keyword">ForEach</span>(<span class="swiftUI-keyword">1</span>...<span class="swiftUI-keyword">100</span>, id: \.<span class="swift-keyword">self</span>) {
+              <span class="swiftUI-keyword">Text</span>(<span class="string">"Column \($</span><span class="swiftUI-keyword">0</span><span class="string">)"</span>)
           }
       }
   }
@@ -343,10 +343,10 @@
                     <p>A view that arranges its children in a vertical line.</p>
                     <code>
             <pre>
-  VStack(alignment: .center, spacing: 20){
-      Text("Hello")
-      Divider()
-      Text("World")
+  <span class="swift-keyword">VStack</span>(alignment: .center, spacing: <span class="swiftUI-keyword">20</span>){
+    <span class="swiftUI-keyword">Text</span>(<span class="string">"Hello"</span>)
+    <span class="swiftUI-keyword">Divider</span>()
+    <span class="swiftUI-keyword">Text</span>(<span class="string">"World"</span>)
   }
             </pre>
           </code>
@@ -357,10 +357,10 @@
                     </p>
                     <code>
             <pre>
-  ScrollView {
-      LazyVStack(alignment: .leading) {
-          ForEach(1...100, id: \.self) {
-              Text("Row \($0)")
+  <span class="swift-keyword">ScrollView</span> {
+      <span class="swiftUI-keyword">LazyVStack</span>(alignment: .leading) {
+          <span class="swiftUI-keyword">ForEach</span>(<span class="swiftUI-keyword">1</span>...<span class="swiftUI-keyword">100</span>, id: \.<span class="swift-keyword">self</span>) {
+              <span class="swiftUI-keyword">Text</span>(<span class="string">"Row \($</span><span class="swiftUI-keyword">0</span><span class="string">)"</span>)
           }
       }
   }
@@ -372,15 +372,15 @@
                     <p>A view that overlays its children, aligning them in both axes.</p>
                     <code>
             <pre>
-  ZStack {
-      Text("Hello")
-          .padding(10)
-          .background(Color.red)
-          .opacity(0.8)
-      Text("World")
-          .padding(20)
-          .background(Color.red)
-          .offset(x: 0, y: 40)
+  <span class="swift-keyword">ZStack</span> {
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Hello"</span>)
+          .<span class="swiftUI-keyword">padding</span>(<span class="swift-keyword">10</span>)
+          .<span class="swiftUI-keyword">background</span>(<span class="swift-keyword">Color</span>.red)
+          .<span class="swiftUI-keyword">opacity</span>(<span class="swiftUI-keyword">0.8</span>)
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"World"</span>)
+          .<span class="swiftUI-keyword">padding</span>(<span class="swiftUI-keyword">20</span>)
+          .<span class="swiftUI-keyword">background</span>(<span class="swift-keyword">Color</span>.red)
+          .<span class="swiftUI-keyword">offset</span>(x: <span class="swiftUI-keyword">0</span>, y: <span class="swiftUI-keyword">40</span>)
   }
             </pre>
           </code>
@@ -390,10 +390,10 @@
                     <p>A container that presents rows of data arranged in a single column.</p>
                     <code>
             <pre>
-  List {
-      Text("Hello world")
-      Text("Hello world")
-      Text("Hello world")
+  <span class="swift-keyword">List</span> {
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Hello World"</span>)
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Hello World"</span>)
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Hello World"</span>)
   }
             </pre>
           </code>
@@ -403,9 +403,9 @@
                     <p>A view that allows the scrolling of its contained views.</p>
                     <code>
             <pre>
-  ScrollView {
-      Image("foo")
-      Text("Hello World")
+  <span class="swift-keyword">ScrollView</span> {
+      <span class="swiftUI-keyword">Image</span>(<span class="string">"foo"</span>)
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Hello World"</span>)
   }
             </pre>
           </code>
@@ -416,13 +416,13 @@
                         only as needed.</p>
                     <code>
             <pre>
-  var rows: [GridItem] =
-          Array(repeating: .init(.fixed(20)), count: 2)
+  <span class="swift-keyword">var</span> rows: [<span class="swift-keyword">GridItem</span>] <span class="other">=</span>
+          <span class="swiftUI-keyword">Array</span>(repeating: .<span class="swift-keyword">init</span>(.<span class="swiftUI-keyword">fixed</span>(<span class="swiftUI-keyword">20</span>)), <span class="swift-keyword">count</span>: <span class="swiftUI-keyword">2</span>)
 
-  ScrollView(.horizontal) {
-      LazyHGrid(rows: rows, alignment: .top) {
-          ForEach((0...100), id: \.self) {
-              Text("\($0)").background(Color.pink)
+  <span class="swiftUI-keyword">ScrollView</span>(.horizontal) {
+      <span class="swiftUI-keyword">LazyHGrid</span>(rows: rows, alignment: .top) {
+          <span class="swiftUI-keyword">ForEach</span>((<span class="swiftUI-keyword">0</span>...<span class="swiftUI-keyword">100</span>), id: \.<span class="swift-keyword">self</span>) {
+              <span class="swiftUI-keyword">Text</span>(<span class="string">"\($</span><span class="swiftUI-keyword">0</span><span class="string">)"</span>).<span class="swiftUI-keyword">background</span>(<span class="swift-keyword">Color</span>.pink)
           }
       }
   }
@@ -433,41 +433,41 @@
                     <h2><span class="hash">#</span>LazyVGrid</h2>
                     <p>A container view that arranges its child views in a grid that grows vertically, creating items
                         only as needed.</p>
-                    <code>
-            <pre>
-  var columns: [GridItem] =
-          Array(repeating: .init(.fixed(20)), count: 5)
+                        <code>
+                            <pre>
+   <span class="swift-keyword">var</span> columns: [<span class="swift-keyword">GridItem</span>] <span class="other">=</span>
+            <span class="swiftUI-keyword">Array</span>(repeating: .<span class="swift-keyword">init</span>(.<span class="swiftUI-keyword">fixed</span>(<span class="swiftUI-keyword">20</span>)), <span class="swift-keyword">count</span>: <span class="swiftUI-keyword">5</span>)
 
-  ScrollView {
-      LazyVGrid(columns: columns) {
-          ForEach((0...100), id: \.self) {
-              Text("\($0)").background(Color.pink)
+    <span class="swiftUI-keyword">ScrollView</span>(.horizontal) {
+        <span class="swiftUI-keyword">LazyVGrid</span>(columns: columns) {
+            <span class="swiftUI-keyword">ForEach</span>((<span class="swiftUI-keyword">0</span>...<span class="swiftUI-keyword">100</span>), id: \.<span class="swift-keyword">self</span>) {
+               <span class="swiftUI-keyword">Text</span>(<span class="string">"\($</span><span class="swiftUI-keyword">0</span><span class="string">)"</span>).<span class="swiftUI-keyword">background</span>(<span class="swift-keyword">Color</span>.pink)
           }
       }
   }
-            </pre>
-          </code>
+                            </pre>
+                          </code>
                 </section>
                 <section id="form" class="main-section">
                     <h2><span class="hash">#</span>Form</h2>
                     <p>A container for grouping controls used for data entry, such as in settings or inspectors.</p>
                     <code>
             <pre>
-  NavigationView {
-      Form {
-          Section {
-              Text("Plain Text")
-              Stepper(value: $quantity, in: 0...10, label: { Text("Quantity") })
+  <span class="swift-keyword">NavigationView</span> {
+      <span class="swift-keyword">Form</span> {
+          <span class="swift-keyword">Section</span> {
+              <span class="swiftUI-keyword">Text</span>(<span class="string">"Plain Text"</span>)
+              <span class="swiftUI-keyword">Stepper</span>(value: $quantity, <span class="swift-keyword">in</span>: <span class="swiftUI-keyword">0</span>...<span class="swiftUI-keyword">10</span>, label: { <span class="swiftUI-keyword">Text</span>(<span class="string">"Quantity"</span>) })
           }
-          Section {
-              DatePicker($date, label: { Text("Due Date") })
-              Picker(selection: $selection, label:
-                  Text("Picker Name")
+          <span class="swift-keyword">Section</span> {
+              <span class="swiftUI-keyword">DatePicker</span>($date, label: { <span class="swiftUI-keyword">Text</span>(<span class="string">"Due Date"</span>) })
+              <span class="swiftUI-keyword">Picker</span>(selection: $selection, label:
+                  <span class="swiftUI-keyword">Text</span>(<span class="string">"Picker Name"</span>)
                   , content: {
-                      Text("Value 1").tag(0)
-                      Text("Value 2").tag(1)
-                      Text("Value 3").tag(2)
-                      Text("Value 4").tag(3)
+                      <span class="swiftUI-keyword">Text</span>(<span class="string">"Value 1"</span>).<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">0</span>)
+                      <span class="swiftUI-keyword">Text</span>(<span class="string">"Value 2"</span>).<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">1</span>)
+                      <span class="swiftUI-keyword">Text</span>(<span class="string">"Value 3"</span>).<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">2</span>)
+                      <span class="swiftUI-keyword">Text</span>(<span class="string">"Value 4"</span>).<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">3</span>)
               })
           }
       }
@@ -481,10 +481,10 @@
                         axes if not contained in a stack.</p>
                     <code>
             <pre>
-  HStack {
-      Image(systemName: "clock")
-      Spacer()
-      Text("Time")
+  <span class="swift-keyword">HStack</span> {
+      <span class="swiftUI-keyword">Image</span>(systemName: <span class="string">"clock"</span>)
+      <span class="swiftUI-keyword">Spacer</span>()
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Time"</span>)
   }
             </pre>
           </code>
@@ -494,11 +494,11 @@
                     <p>A visual element that can be used to separate other content.</p>
                     <code>
             <pre>
-  HStack {
-      Image(systemName: "clock")
-      Divider()
-      Text("Time")
-  }.fixedSize()
+  <span class="swift-keyword">HStack</span> {
+      <span class="swiftUI-keyword">Image</span>(systemName: <span class="string">"clock"</span>)
+      <span class="swiftUI-keyword">Divider</span>()
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Time"</span>)
+  }.<span class="swiftUI-keyword">fixedSize</span>()
             </pre>
           </code>
                 </section>
@@ -507,11 +507,11 @@
                     <p>A view for presenting a stack of views representing a visible path in a navigation hierarchy.</p>
                     <code>
             <pre>
-  NavigationView {            
-      List {
-          Text("Hello World")
+  <span class="swift-keyword">NavigationView</span> {            
+      <span class="swift-keyword">List</span> {
+          <span class="swiftUI-keyword">Text</span>(<span class="string">"Hello World"</span>)
       }
-      .navigationBarTitle(Text("Navigation Title")) // Default to large title style
+      .<span class="swiftUI-keyword">navigationBarTitle</span>(<span class="swiftUI-keyword">Text</span>(<span class="string">"Navigation Title"</span>)) <span class="comment">// Default to large title style</span>
   }
             </pre>
           </code>
@@ -522,15 +522,15 @@
                         elements.</p>
                     <code>
             <pre>
-  TabView {
-      Text("First View")
-          .font(.title)
-          .tabItem({ Text("First") })
-          .tag(0)
-      Text("Second View")
-          .font(.title)
-          .tabItem({ Text("Second") })
-          .tag(1)
+  <span class="swift-keyword">TabView</span> {
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"First View"</span>)
+          .<span class="swiftUI-keyword">font</span>(.title)
+          .<span class="swiftUI-keyword">tabItem</span>({ <span class="swiftUI-keyword">Text</span>(<span class="string">"First"</span>) })
+          .<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">0</span>)
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Second View"</span>)
+          .<span class="swiftUI-keyword">font</span>(.title)
+          .<span class="swiftUI-keyword">tabItem</span>({ <span class="swiftUI-keyword">Text</span>(<span class="string">"Second"</span>) })
+          .<span class="swiftUI-keyword">tag</span>(<span class="swiftUI-keyword">1</span>)
   }
             </pre>
           </code>
@@ -540,12 +540,12 @@
                     <p>A container for an alert presentation.</p>
                     <code>
             <pre>
-  @State var isError: Bool = false
+  @<span class="swift-keyword">State var</span> isError: <span class="swift-keyword">Bool</span> <span class="other">=</span> <span class="swiftUI-keyword">false</span>
 
-  Button("Alert") {
-      self.isError = true
-  }.alert(isPresented: $isError, content: {
-      Alert(title: Text("Error"), message: Text("Error Reason"), dismissButton: .default(Text("OK")))
+  <span class="swiftUI-keyword">Button</span>(<span class="string">"Alert"</span>) {
+      <span class="swift-keyword">self</span>.isError = <span class="swiftUI-keyword">true</span>
+  }.<span class="swiftUI-keyword">alert</span>(isPresented: $isError, content: {
+      <span class="swiftUI-keyword">Alert</span>(title: <span class="swiftUI-keyword">Text</span>(<span class="string">"Error"</span>), message: <span class="swiftUI-keyword">Text</span>(<span class="string">"Error Reason"</span>), dismissButton: .<span class="swift-keyword">default</span>(<span class="swiftUI-keyword">Text</span>(<span class="string">"OK"</span>)))
   })
             </pre>
           </code>
@@ -555,16 +555,16 @@
                     <p>A modal transition.</p>
                     <code>
             <pre>
-  @State var isModal: Bool = false
+  @<span class="swift-keyword">State var</span> isModal: <span class="swift-keyword">Bool</span> <span class="other">=</span> <span class="swiftUI-keyword">false</span>
 
-  var modal: some View {
-      Text("Modal")
+  <span class="swift-keyword">var</span> modal: some <span class="swift-keyword">View</span> {
+      <span class="swiftUI-keyword">Text</span>(<span class="string">"Modal"</span>)
   }
 
-  Button("Modal") {
-      self.isModal = true
-  }.sheet(isPresented: $isModal, content: {
-      self.modal
+  <span class="swiftUI-keyword">Button</span>(<span class="string">"Modal"</span>) {
+      <span class="swift-keyword">self</span>.isModal <span class="other">=</span> <span class="swiftUI-keyword">true</span>
+  }.<span class="swiftUI-keyword">sheet</span>(isPresented: $isModal, content: {
+      <span class="swift-keyword">self</span>.modal
   })
             </pre>
           </code>
@@ -574,26 +574,26 @@
                     <p>A storage type for an action sheet presentation.</p>
                     <code>
             <pre>
-  @State var isSheet: Bool = false
+  @<span class="swift-keyword">State var</span> isSheet: <span class="swift-keyword">Bool</span> <span class="other">=</span> <span class="swiftUI-keyword">false</span>
 
-  var actionSheet: ActionSheet {
-      ActionSheet(title: Text("Action"),
-                  message: Text("Description"),
+  <span class="swift-keyword">var</span> actionSheet: <span class="swift-keyword">ActionSheet</span> {
+      <span class="swiftUI-keyword">ActionSheet</span>(title: <span class="swiftUI-keyword">Text</span>(<span class="string">"Action"</span>),
+                  message: <span class="swiftUI-keyword">Text</span>(<span class="string">"Description"</span>),
                   buttons: [
-                      .default(Text("OK"), action: {
+                      .<span class="swift-keyword">default</span>(<span class="swiftUI-keyword">Text</span>(<span class="string">"OK"</span>), action: {
                           
                       }),
-                      .destructive(Text("Delete"), action: {
+                      .<span class="swiftUI-keyword">destructive</span>(<span class="swiftUI-keyword">Text</span>(<span class="string">"Delete"</span>), action: {
                           
                       })
                   ]
       )
   }
 
-  Button("Action Sheet") {
-      self.isSheet = true
-  }.actionSheet(isPresented: $isSheet, content: {
-      self.actionSheet
+  <span class="swiftUI-keyword">Button</span>(<span class="string">"Action Sheet"</span>) {
+      <span class="swift-keyword">self</span>.isSheet <span class="other">=</span> <span class="swiftUI-keyword">true</span>
+  }.<span class="swiftUI-keyword">actionSheet</span>(isPresented: $isSheet, content: {
+      <span class="swift-keyword">self</span>.actionSheet
   })
             </pre>
           </code>
