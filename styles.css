@@ -27,7 +27,24 @@ nav a:nth-of-type(21), a:nth-of-type(22), a:nth-of-type(23), a:nth-of-type(24), 
 }
 
 nav a:nth-of-type(1), a:nth-of-type(2), a:nth-of-type(20) {
-    color: #252422;
+    color: #2D2D2D;
+}
+
+a:not(.nav-header):hover {
+    color: #2D2D2D;
+    background-color: #f2f2f2;
+}
+
+a:hover {
+    color: #EC633E !important;
+    background-color: #2D2D2D;
+}
+
+.nav-link {
+    color: unset;
+    text-decoration: none;
+    display: block;
+    padding-top: 10px;
 }
 
 h1 {
@@ -45,7 +62,7 @@ p {
 
 pre {
     color: #CCCCCC;
-    background-color: black;
+    background-color: #2D2D2D;
     padding: 15px 10px;
     margin: 15px 0 85px 0;
     border-radius: 5px;
@@ -53,13 +70,6 @@ pre {
 
 ul {
     padding-bottom: 35px;
-}
-
-.nav-link {
-    color: unset;
-    text-decoration: none;
-    display: block;
-    padding-top: 10px;
 }
 
 #views-controls-header {
