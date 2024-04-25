@@ -1,14 +1,11 @@
 * {
     box-sizing: border-box;
+    font-family: prima-sans-mono;
 }
 
 @font-face {
     font-family: prima-sans-mono;
     src: url(prima-sans-mono-bold.otf); 
-}
-
-body {
-    font-family: prima-sans-mono;
 }
 
 #navbar {
