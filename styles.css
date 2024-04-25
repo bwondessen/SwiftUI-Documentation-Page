@@ -5,15 +5,19 @@
 
 @font-face {
     font-family: prima-sans-mono;
-    src: url(prima-sans-mono-bold.otf); 
+    src: url(prima-sans-mono-bold.otf);
 }
 
 #navbar {
-    height: 100%; /* 100% Full-height */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    height: 100%;
+    /* 100% Full-height */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
     left: 0;
-    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
     padding: 30px;
     color: #9A9A9E;
 }
@@ -24,17 +28,56 @@
     overflow-x: hidden;
 }
 
-nav a:nth-of-type(3), a:nth-of-type(4), a:nth-of-type(5), a:nth-of-type(6) ,a:nth-of-type(7) ,a:nth-of-type(8) ,a:nth-of-type(9), a:nth-of-type(10), a:nth-of-type(11), a:nth-of-type(12), a:nth-of-type(13), a:nth-of-type(14), a:nth-of-type(15), a:nth-of-type(16), a:nth-of-type(17), a:nth-of-type(18), a:nth-of-type(19) {
+#introduction p,
+#introduction li,
+nav a {
+    font-family: "Roboto", prima-sans-mono, sans-serif;
+}
+
+nav a:nth-of-type(3),
+a:nth-of-type(4),
+a:nth-of-type(5),
+a:nth-of-type(6),
+a:nth-of-type(7),
+a:nth-of-type(8),
+a:nth-of-type(9),
+a:nth-of-type(10),
+a:nth-of-type(11),
+a:nth-of-type(12),
+a:nth-of-type(13),
+a:nth-of-type(14),
+a:nth-of-type(15),
+a:nth-of-type(16),
+a:nth-of-type(17),
+a:nth-of-type(18),
+a:nth-of-type(19) {
     padding-left: 20px;
 }
 
-nav a:nth-of-type(21), a:nth-of-type(22), a:nth-of-type(23), a:nth-of-type(24), a:nth-of-type(25), a:nth-of-type(26), a:nth-of-type(27), a:nth-of-type(28), a:nth-of-type(29), a:nth-of-type(30), a:nth-of-type(31), a:nth-of-type(32), a:nth-of-type(33), a:nth-of-type(34), a:nth-of-type(35), a:nth-of-type(36), a:nth-of-type(37) {
+nav a:nth-of-type(21),
+a:nth-of-type(22),
+a:nth-of-type(23),
+a:nth-of-type(24),
+a:nth-of-type(25),
+a:nth-of-type(26),
+a:nth-of-type(27),
+a:nth-of-type(28),
+a:nth-of-type(29),
+a:nth-of-type(30),
+a:nth-of-type(31),
+a:nth-of-type(32),
+a:nth-of-type(33),
+a:nth-of-type(34),
+a:nth-of-type(35),
+a:nth-of-type(36),
+a:nth-of-type(37) {
     padding-left: 20px;
 }
 
 a:hover {
     color: #2D2D2D;
-    background-color: #f2f2f2;;
+    background-color: #f2f2f2;
+    ;
 }
 
 .nav-link {
