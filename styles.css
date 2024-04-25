@@ -2,6 +2,15 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: prima-sans-mono;
+    src: url(prima-sans-mono-bold.otf); 
+}
+
+body {
+    font-family: prima-sans-mono;
+}
+
 #navbar {
     height: 100%; /* 100% Full-height */
     position: fixed; /* Stay in place */
@@ -14,7 +23,7 @@
 
 #main {
     padding: 30px;
-    margin-left: 250px;
+    margin-left: 275px;
     overflow-x: hidden;
 }
 
@@ -58,6 +67,7 @@ pre {
     padding: 15px 10px;
     margin: 15px 0 85px 0;
     border-radius: 5px;
+    overflow: scroll;
 }
 
 ul {
