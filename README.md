@@ -7,7 +7,7 @@ A documentation page for the SwiftUI framework!
 ## Overview
 SwiftUI is a declartivie framework for the Swift programming language. It is used to build user interfaces for iOS devices. 
 
-This documentage page will help learn the basics of SwiftUI. Tap on the topics on the left-hand side menu to navigate to different sections of the website.
+This documentage page teaches the basics of SwiftUI. Tap on the topics on the left-hand side menu to navigate to different sections of the website.
 
 ## Features
 * Menu bar for navigation
